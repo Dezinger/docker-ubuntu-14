@@ -1,7 +1,7 @@
 PWD = $(shell pwd)
 IMAGE_NAME = $(shell basename ${PWD})
 BASE_IMAGE = $(shell grep Dockerfile -e FROM | cut -d ' ' -f 2)
-DOCKER_SOCKET = /var/run/docker.sock
+#DOCKER_SOCKET = /var/run/docker.sock
 BUILD_ARGS = --rm
 
 all: pull build 
