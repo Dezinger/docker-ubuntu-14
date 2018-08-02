@@ -2,6 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER dezinger@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV UID 999
 
 COPY files/ /
 
