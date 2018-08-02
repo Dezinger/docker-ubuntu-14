@@ -8,7 +8,7 @@ COPY files/ /
 RUN \
 # update & install base util
     apt-get -y update && apt-get -y upgrade && \
-    apt-get -o Dpkg::Options::=--force-confdef -y install supervisor curl wget locales \ 
+    apt-get -o Dpkg::Options::=--force-confdef -y install supervisor curl wget locales gettext-base \ 
     python-software-properties software-properties-common && \
 # setup locale
     locale-gen en_US.UTF-8 ru_RU.UTF-8 && \
