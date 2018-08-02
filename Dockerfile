@@ -2,7 +2,6 @@ FROM ubuntu:trusty
 MAINTAINER dezinger@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV UID 999
 
 COPY files/ /
 
@@ -17,14 +16,12 @@ RUN \
     mkdir --mode 777 -p /var/log/supervisor && \
     chmod -R 777 /var/run /var/log /etc/passwd /etc/group && \
     mkdir --mode 777 -p /tmp/sockets && \
-    chmod 755 /etc/supervisor/exit_on_fatal.py && \
 # clean 
     apt-get -y autoremove && apt-get -y clean && apt-get autoclean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm /var/log/lastlog /var/log/faillog
 
 ENV \
-    SUPERVISORD_EXIT_ON_FATAL=1 \
     LC_ALL=ru_RU.UTF-8 \
     LANG=ru_RU.UTF-8 \
     LANGUAGE=ru_RU.UTF-8
