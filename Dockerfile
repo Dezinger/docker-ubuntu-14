@@ -26,8 +26,6 @@ ENV \
     LANG=ru_RU.UTF-8 \
     LANGUAGE=ru_RU.UTF-8
 
-VOLUME ["/tmp/etc"]
-
 ENTRYPOINT ["/bin/bash", "-e", "/init/entrypoint"]
 
 CMD ["run"]
